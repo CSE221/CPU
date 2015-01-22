@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include <iostream.h>
+#include <iostream>
+#include <stdint.h>
 
 //define rdtsc() 
  __inline__ uint64_t rdtsc() {
@@ -13,25 +14,25 @@
 }
 
 
-
+using namespace std; 
 
 //using rdtsc to record loop time 
 int main()
 {
-    N = 10000;
+    int N = 10000;
     int cycle_cnt1 = 0, cycle_cnt2 = 0, cycle_cnt = 0; 
     cycle_cnt1 = rdtsc();
     cycle_cnt2 = rdtsc();
-    cycle_cnt = cycle_cn1 - cycle_cnt2; //test for one time 
+    cycle_cnt = cycle_cnt2 - cycle_cnt1; //test for one time 
     cout << "One time test " << cycle_cnt << endl;    
     
     for(int i=0; i<N; i++)
     { 
        cycle_cnt1 = rdtsc();
        cycle_cnt2 = rdtsc();
-       cycle_cnt = cycle_cn1 - cycle_cnt2; //test for N time 
+       cycle_cnt = cycle_cnt2 - cycle_cnt1; //test for N time 
+       cout << "Loop test " << cycle_cnt << endl; 
     }  
-    cout << "Loop test" << cycle_cnt << endl; 
     return 0; 
 }
 
