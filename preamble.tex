@@ -1,0 +1,180 @@
+
+
+%------------------------------------------------------------------------------- 
+% Math packages
+%------------------------------------------------------------------------------- 
+
+% The "amsmath" package provides advanced math extensions.
+\usepackage{amsmath}
+
+% The "amssymb" package adds new symbols to be used in math mode.
+\usepackage{amssymb}
+
+% The "amsthm" package adds the "proof" environment and "theoremstyle" command.
+% \usepackage{amsthm}
+
+%------------------------------------------------------------------------------- 
+% Figure packages
+%------------------------------------------------------------------------------- 
+
+% The "fancyvrb" package provides advanced customization of verbatim environments, such as font families, numbering lines, box borders etc.
+\usepackage{fancyvrb}
+
+% The "graphicx" package allows including external graphic files.
+\usepackage{graphicx}
+
+% The "subfig" package allows multiple sub-figures within a single figure, where sub-figures can be separately captioned and labeled, e.g. Figure % 1.2(a). This is a replacement for the older "subfigure" package.
+% \usepackage{subfig}
+
+% HACK: The caption package (included by the subfig package) requires a counter for ACM's copyright box.
+\newcounter{copyrightbox}
+
+% The "float" package allows the "H" option for figures, which places a float % at a precise location.
+\usepackage{float}
+
+% The "caption" package allows captions for figures that are not actually in a floating environment (e.g. framed environment).
+\usepackage{caption}
+
+% The "framed" package creates framed regions that can break across pages.
+\usepackage{framed}
+
+
+% The "algorithm2e" package provides keywords for typesetting algorithms. The "noend" option disables the printing of the "end" keywords. Use "algomargin" to decrease the margins for all algorithms.
+
+% Kevin: To resolve conflict of algorithm2e with other packages, a common problem with ACM template.
+% See http://ergodicthoughts.blogspot.com/2009/06/latex-too-many-s-algorithm2e.html
+% \makeatletter
+% \newif\if@restonecol
+% \makeatother
+% \let\algorithm\relax
+% \let\endalgorithm\relax
+% \usepackage[noend,boxed]{algorithm2e}
+% \setlength{\algomargin}{0.5em}
+
+%------------------------------------------------------------------------------- 
+% Layout packages
+%------------------------------------------------------------------------------- 
+
+% The "multirow" package allows table cells to span more than one row.
+\usepackage{multirow}
+
+% The "balance" package allows columns of the last page to be of equal height.
+\usepackage{balance}
+
+%------------------------------------------------------------------------------- 
+% Whitespace packages
+%------------------------------------------------------------------------------- 
+
+% The "savetrees" package saves space on a page.
+% \usepackage[all=normal,paragraphs=tight,floats=tight,bibnotes=tight]{savetrees}
+% \usepackage[all=normal,paragraphs=tight,floats=tight,bibnotes=tight,bibliography=tight]{savetrees}
+
+% The "setspace" package allows changing the inter-line spacing to be a multiple of the default line spacing.
+% \usepackage{setspace}
+% \setstretch{0.98}
+
+% The "titlesec" package allows changing the whitespace around section headings.
+% \usepackage[compact]{titlesec}
+
+%------------------------------------------------------------------------------- 
+% Font packages
+%------------------------------------------------------------------------------- 
+
+% The "beramono" package provides Bitstream Vera Mono, which has a bold typewritter fontface.
+% \usepackage[scaled]{beramono}
+% \usepackage[T1]{fontenc}
+
+% The "courier" package provides Courier, which has a bold typewritter fontface.
+%\usepackage{courier}
+
+%------------------------------------------------------------------------------- 
+% Misc packages
+%------------------------------------------------------------------------------- 
+
+% The "optional" package allows multiple versions of the document via optional text.
+\usepackage{optional}
+
+% The "xcolor" package allows colored text and backgrounds.
+\usepackage[table]{xcolor}
+
+% The "soul" package allows highlighting.
+\usepackage{soul}
+
+% The "ulem" package allows highlighting.
+\usepackage[normalem]{ulem}
+
+% The "tocloft" packages allows generating custom lists that are similar to table of contents, list of figures etc.
+% \usepackage[subfigure]{tocloft}
+
+% The "hyperref" package allows creating hyperlinks. Note that it must be the last package loaded, and will automatically includes the "url" package.
+\usepackage{hyperref}
+
+% The "hypcap" package fixes "hyperref" so that hyperlinks go to the top of a float (as opposed to its caption).
+% \usepackage[all]{hypcap}
+
+%------------------------------------------------------------------------------- 
+% Whitespace
+%------------------------------------------------------------------------------- 
+
+% Adjust whitespace above and below captions
+% \addtolength{\abovecaptionskip}{-5pt}
+% \addtolength{\belowcaptionskip}{-9pt}
+
+%------------------------------------------------------------------------------- 
+% Macros
+%------------------------------------------------------------------------------- 
+
+% Define our own compact enumerate
+\newenvironment{compact_enum}
+{\setlength{\leftmargini}{1em}
+\begin{enumerate}
+  \setlength{\labelsep}{.3em} 
+  \setlength{\itemsep}{.4em}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}}
+{\end{enumerate}}
+
+% Define our own compact itemize
+\newenvironment{compact_item}
+{\setlength{\leftmargini}{1em}
+\begin{itemize}
+  \setlength{\labelsep}{.3em} 
+  \setlength{\itemsep}{.4em}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}}
+{\end{itemize}}
+
+% \newtheorem{theorem}{Theorem}[section]
+% \newtheorem{lemma}[theorem]{Lemma}
+% \newtheorem{proposition}[theorem]{Proposition}
+% \newtheorem{corollary}[theorem]{Corollary}
+
+% \newenvironment{proof}[1][Proof]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+% \newenvironment{definition}[1][Definition]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+% \newenvironment{example}[1][Example]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+% \newenvironment{remark}[1][Remark]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+% \newcommand{\qed}{\nobreak \ifvmode \relax \else
+%       \ifdim\lastskip<1.5em \hskip-\lastskip
+%       \hskip1.5em plus0em minus0.5em \fi \nobreak
+%       \vrule height0.75em width0.5em depth0.25em\fi}
+
+
+%------------------------------------------------------------------------------- 
+% Database symbols
+%------------------------------------------------------------------------------- 
+
+\def\join{$\bowtie$}
+\def\ojoin{\setbox0=\hbox{$\bowtie$}%
+  \rule[-.02ex]{.25em}{.4pt}\llap{\rule[\ht0]{.25em}{.4pt}}}
+\def\leftouterjoin{\mathbin{\ojoin\mkern-5.8mu\bowtie}}
+\def\rightouterjoin{\mathbin{\bowtie\mkern-5.8mu\ojoin}}
+\def\fullouterjoin{\mathbin{\ojoin\mkern-5.8mu\bowtie\mkern-5.8mu\ojoin}}
+%\def\semijoin{\mbox{$\mathrel{\raise1pt\hbox{\vrule height5pt depth0pt\hskip-1.5pt$>$\hskip -2.5pt$<$}}$}}
+%\def\antisemijoin{\overline{\semijoin}}
+\def\semijoin{\ltimes}
+\def\antijoin{\bar{\semijoin}} 
