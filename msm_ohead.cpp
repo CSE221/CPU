@@ -23,6 +23,7 @@ int main()
     cycle_cnt1 = rdtsc();
     cycle_cnt2 = rdtsc();
     cycle_cnt = cycle_cn1 - cycle_cnt2; //test for one time 
+    cout << "One time test " << cycle_cnt << endl;    
     
     for(int i=0; i<N; i++)
     { 
@@ -30,8 +31,8 @@ int main()
        cycle_cnt2 = rdtsc();
        cycle_cnt = cycle_cn1 - cycle_cnt2; //test for N time 
     }  
-
-
+    cout << "Loop test" << cycle_cnt << endl; 
+    return 0; 
 }
 
 
