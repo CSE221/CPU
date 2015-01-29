@@ -29,72 +29,82 @@ void func7(int a, int b, int c, int d, int e, int f, int g) {}
 
 
 int main(){
-   int cyc_cnt1 = 0, cyc_cnt2 = 0, cyc_cnt = 0;
+   int cyc_cnt1 = 0, cyc_cnt2 = 0;
+   float  cyc_cnt = 0.0;
+   int N = 10000;
    int i = 0;   
    int a,b,c,d,e,f,g = 0; 
  
    cyc_cnt1 = rdtsc();
-   for(int j=0; j<10000; j++)
+   for(int j=0; j<N; j++)
    func0();
    cyc_cnt2 = rdtsc();
    cyc_cnt = cyc_cnt2- cyc_cnt1; 
+   cyc_cnt = cyc_cnt / N;  
    cout << "Procedure with " << i << " argument has " << cyc_cnt << "cycles" << endl; 
    i++;
 
       
    cyc_cnt1 = rdtsc();
-   for(int j=0; j<10000; j++)
+   for(int j=0; j<N; j++)
    func1(a);
    cyc_cnt2 = rdtsc();
    cyc_cnt = cyc_cnt2- cyc_cnt1; 
+   cyc_cnt = cyc_cnt / N;  
    cout << "Procedure with " << i << " argument has " << cyc_cnt << "cycles" << endl; 
    i++;   
 
    cyc_cnt1 = rdtsc();
-   for(int j=0; j<10000; j++)
+   for(int j=0; j<N; j++)
    func2(a,b);
    cyc_cnt2 = rdtsc();
    cyc_cnt = cyc_cnt2- cyc_cnt1; 
+   cyc_cnt = cyc_cnt / N;  
    cout << "Procedure with " << i << " argument has " << cyc_cnt << "cycles" << endl; 
    i++;
 
    cyc_cnt1 = rdtsc();
-   for(int j=0; j<10000; j++)
+   for(int j=0; j<N; j++)
    func3(a,b,c);
    cyc_cnt2 = rdtsc();
    cyc_cnt = cyc_cnt2- cyc_cnt1; 
+   cyc_cnt = cyc_cnt / N;  
    cout << "Procedure with " << i << " argument has " << cyc_cnt << "cycles" << endl; 
    i++;
 
    cyc_cnt1 = rdtsc();
-   for(int j=0; j<10000; j++)
+   for(int j=0; j<N; j++)
    func4(a,b,c,d);
    cyc_cnt2 = rdtsc();
    cyc_cnt = cyc_cnt2- cyc_cnt1; 
+   cyc_cnt = cyc_cnt / N;  
    cout << "Procedure with " << i << " argument has " << cyc_cnt << "cycles" << endl; 
    i++;
 
    cyc_cnt1 = rdtsc();
-   for(int j=0; j<10000; j++)
+   for(int j=0; j<N; j++)
    func5(a,b,c,d,e);
    cyc_cnt2 = rdtsc();
    cyc_cnt = cyc_cnt2- cyc_cnt1; 
+   cyc_cnt = cyc_cnt / N;  
    cout << "Procedure with " << i << " argument has " << cyc_cnt << "cycles" << endl; 
    i++;
 
    cyc_cnt1 = rdtsc();
-   for(int j=0; j<10000; j++)
+   for(int j=0; j<N; j++)
    func6(a,b,c,d,e,f);
    cyc_cnt2 = rdtsc();
    cyc_cnt = cyc_cnt2- cyc_cnt1; 
+   cyc_cnt = cyc_cnt / N;  
    cout << "Procedure with " << i << " argument has " << cyc_cnt << "cycles" << endl; 
    i++;
 
    cyc_cnt1 = rdtsc();
-   for(int j=0; j<10000; j++)
+   for(int j=0; j<N; j++)
    func7(a,b,c,d,e,f,g);
    cyc_cnt2 = rdtsc();
    cyc_cnt = cyc_cnt2- cyc_cnt1; 
+   cyc_cnt = cyc_cnt / N;  
    cout << "Procedure with " << i << " argument has " << cyc_cnt << "cycles" << endl; 
    
 }

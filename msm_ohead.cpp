@@ -20,19 +20,23 @@ using namespace std;
 int main()
 {
     int N = 10000;
-    int cycle_cnt1 = 0, cycle_cnt2 = 0, cycle_cnt = 0; 
-    cycle_cnt1 = rdtsc();
-    cycle_cnt2 = rdtsc();
-    cycle_cnt = cycle_cnt2 - cycle_cnt1; //test for one time 
-    cout << "One time test " << cycle_cnt << endl;    
-    
+    int cycle_cnt1 = 0, cycle_cnt2 = 0;
+    float  cycle_cnt = 0.0; 
+   // cycle_cnt1 = rdtsc();
+   // cycle_cnt2 = rdtsc();
+   // cycle_cnt = cycle_cnt2 - cycle_cnt1; //test for one time 
+   // cout << "One time test " << cycle_cnt << endl;    
+   
+    cycle_cnt = 0.0;  
     for(int i=0; i<N; i++)
     { 
        cycle_cnt1 = rdtsc();
        cycle_cnt2 = rdtsc();
-       cycle_cnt = cycle_cnt2 - cycle_cnt1; //test for N time 
-       cout << "Loop test " << cycle_cnt << endl; 
+       cycle_cnt += cycle_cnt2 - cycle_cnt1; //test for N time 
+      // cout << "Loop test " << cycle_cnt << endl; 
     }  
+    cycle_cnt = cycle_cnt/N;  
+    cout << "Loop test " << cycle_cnt << endl; 
     return 0; 
 }
 
